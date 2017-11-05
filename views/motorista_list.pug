@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each motorista in motorista_list
+    li 
+      a(href=motorista.url) #{motorista.mot_nome} 
+      |  (#{motorista.mot_nome})
+
+  else
+    li Não há registros.

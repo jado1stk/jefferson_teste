@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='mot_nome') Nome:
+      input#mot_nome.form-control(type='text', placeholder='Nome Completo' name='mot_nome' required='true' value=(undefined===mot ? '' : motorista.mot_nome) )
+      label(for='mot_cpf') CPF:
+      input#mot_cpf.form-control(type='text', placeholder='Somente Numeros' name='mot_cpf' required='true' value=(undefined===mot ? '' : motorista.mot_cpf))
+    div.form-group
+      label(for='mot_dtnascimento') Data Nascimento:
+      input#mot_dtnascimento.form-control(type='date' name='mot_dtnascimento' required='true' value=(undefined===mot ? '' : motorista.mot_dtnascimento) )
+      label(for='mot_carro') Modelo Carro:
+      input#mot_dtnascimento.form-control(type='string' name='mot_carro' required='true' value=(undefined===mot ? '' : motorista.mot_carro) )
+      label(for='mot_sexo') Sexo:
+      input#mot_dtnascimento.form-control(type='string' name='mot_sexo' required='true' value=(undefined===mot ? '' : motorista.mot_sexo) )
+      input.checkbox-input(type='checkbox', name='mot_status', value=mot_status placeholder='Status' checked=true)
+    <p>Ativo?</p>
+    button.btn.btn-primary(type='submit') Submit
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

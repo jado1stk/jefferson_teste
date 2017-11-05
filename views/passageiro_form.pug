@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1=title
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='pas_nome') Nome:
+      input#pas_nome.form-control(type='text', placeholder='Nome Completo' name='pas_nome' required='true' value=(undefined===pas ? '' : passageiro.pas_nome) )
+      label(for='pas_cpf') CPF:
+      input#pas_cpf.form-control(type='text', placeholder='Somente Numeros' name='pas_cpf' required='true' value=(undefined===pas ? '' : passageiro.pas_cpf))
+    div.form-group
+      label(for='pas_dtnascimento') Data Nascimento:
+      input#pas_dtnascimento.form-control(type='date' name='pas_dtnascimento' required='true' value=(undefined===pas ? '' : passageiro.pas_dtnascimento) )
+      label(for='pas_sexo') Sexo:
+      input#pas_dtnascimento.form-control(type='string' name='pas_sexo' required='true' value=(undefined===pas ? '' : passageiro.pas_sexo) )
+    button.btn.btn-primary(type='submit') Submit
+  if errors 
+    ul
+      for error in errors
+        li!= error.msg

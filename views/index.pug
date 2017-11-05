@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p Pequeno programa para registro e consulta de motoristas e passageiros.
+
+  if error
+    p Error getting dynamic content.
+  else
+    p Quantidade de registros: 
+	
+    ul
+      li #[strong Motoristas:] !{data.motorista_count}
+      li #[strong Passageiros:] !{data.passageiro_count}
+      li #[strong Corrida:] !{data.corrida_count} 
+      

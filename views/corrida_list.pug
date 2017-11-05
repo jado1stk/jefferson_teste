@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each corrida in corrida_list
+    li 
+      a(href=corrida.url) #{corrida.cor_motorista} 
+      |  (#{corrida.cor_passageiro}) | (#{corrida.cor_valor}) 
+
+  else
+    li Não há registros.

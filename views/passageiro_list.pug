@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+  each passageiro in passageiro_list
+    li 
+       a(href=passageiro.url) #{passageiro.pas_nome}
+     
+
+  else
+    li Não há registros
